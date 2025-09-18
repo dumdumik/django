@@ -1,7 +1,14 @@
-from contextlib import nullcontext
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
+from datetime import date
+from django import forms
 import uuid
+
+
+class RenewalBookForm(forms.Form):
+    renewal_date = forms.DateField(help_text="Enter a date between now and 4 weeks (default 3).")
+
 
 class Genre(models.Model):
     name = models.CharField(max_length=200, help_text="Enter a book genre (e.g. Science Fiction,"
@@ -41,11 +48,20 @@ class BookInstance(models.Model):
         ('r', 'Reserved')
     )
 
+    borrower = models.ForeignKey(User,on_delete=models.SET_NULL, null=True, blank=True)
+    @property
+    def is_overdue(self):
+        if self.due_back and date.today() > self.due_back:
+            return True
+        return False
+
+
     status = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='m',
                               help_text="Book availability")
 
     class Meta:
         ordering = ['due_back']
+        permissions = (("can_mark_returned", "Set book as returned"),)
 
     def __str__(self):
         return f'{self.book.title} (ID: {self.id}) - Status: {self.get_status_display()}, Due back: {self.due_back if self.due_back else "No due date"}'
@@ -63,3 +79,4 @@ class Author(models.Model):
 
     def __str__(self):
         return '%s, %s' % (self.last_name, self.first_name)
+
