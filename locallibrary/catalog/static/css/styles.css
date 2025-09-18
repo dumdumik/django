@@ -3,12 +3,37 @@
   padding: 0;
   list-style: none;
 }
-.user{
+ul > li{
+  font-family: "Times New Roman";
   font-size: 16px;
-  color: darkgreen;
+}
+.user{
+  margin: 10px 0 0 0;
+  font-size: 16px;
   font-weight: 600;
+}
+.user > span{
+  color: darkgreen;
+  font-family: "Comic Sans MS";
+  font-weight: 400;
 }
 form > button{
   width: 100px;
   border-radius: 15px;
+  font-family: "Comic Sans MS";
+}
+.staff{
+  margin: 10px 0 0 0;
+  font-size: 16px;
+  color: darkslategray;
+  font-weight: 600;
+}
+form > button{
+  margin: 10px 0 0 0;
+}
+.searchBook > span{
+  font-family: "Times New Roman";
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
 }

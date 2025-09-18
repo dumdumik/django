@@ -2,12 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import date
-from django import forms
 import uuid
-
-
-class RenewalBookForm(forms.Form):
-    renewal_date = forms.DateField(help_text="Enter a date between now and 4 weeks (default 3).")
 
 
 class Genre(models.Model):

@@ -1,9 +1,9 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <p>Logged out!</p>
+  <p>Вы вышли из профиля</p>
 <form method="post">
     {% csrf_token %}
-     <a href="{% url 'login'%}">Click here to login again.</a>
+     <a href="{% url 'login'%}">Нажмите тут чтобы войти снова</a>
 </form>
 {% endblock %}

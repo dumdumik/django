@@ -3,15 +3,14 @@
 {% block content %}
 
 {% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
+  <p>Ваш логин или пароль не верны. Попробуйте еще раз</p>
 {% endif %}
 
 {% if next %}
   {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
+    <p>У вас нет доступа к этой странице. Войдите под учетный записью, у которой есть доступ.</p>
   {% else %}
-    <p>Please login to see this page.</p>
+    <p>Войдите чтобы перейти к этой странице</p>
   {% endif %}
 {% endif %}
 
@@ -30,11 +29,11 @@
 </tr>
 </table>
 
-<input type="submit" value="login" />
+<input type="submit" value="Войти" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
 
 {% endblock %}

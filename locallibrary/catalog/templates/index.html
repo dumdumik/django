@@ -2,29 +2,27 @@
 
 {% block content %}
 {% block title %}<title> Home page </title>{% endblock %}
-<h1>Local Library Home</h1>
+<h1>Библиотека домашняя страница</h1>
 
-  <p>Welcome to <em>LocalLibrary</em>, a very basic Django website developed as a tutorial example on the Mozilla Developer Network.</p>
+  <p>Добро пожаловать в <em>Библиотеку</em>, очень простой веб-сайт Django, разработанный в качестве учебного примера в сети разработчиков Mozilla.</p>
+<h2>Динамический контент</h2>
 
-<h2>Dynamic content</h2>
-
-  <p>The library has the following record counts:</p>
+  <p>В библиотеке имееется следующее количество записей</p>
   <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-    <li><strong>Copies:</strong> {{ num_instances }}</li>
-    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Количество книг</strong> {{ num_books }}</li>
+    <li><strong>Количество их копий</strong> {{ num_instances }}</li>
+    <li><strong>Количество доступных копий</strong> {{ num_instances_available }}</li>
+    <li><strong>Количество авторов</strong> {{ num_authors }}</li>
   </ul>
   <form method="get">
-    <label>Serach Word</label>
+    <label>Введите слово для поиска</label>
     <input type="text" id="search_word" name="search_word" value="{{ search_word }}">
-    <button type="submit">Search</button>
+    <button type="submit">Поиск</button>
   </form>
-<p>Total books containing "{{ search_word }}": {{ book_count }}</p>
+<p class="searchBook">Количество книг, в названии которых есть "<span>{{ search_word }}</span>" = {{ book_count }}</p>
 
 <p>
-  You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{%
-  else %} times{% endif %}.
+  Вы посетили эту страницу {{ num_visits }}{% if num_visits == 1 %} раз{% else %} раз{% endif %}.
 </p>
 
 
