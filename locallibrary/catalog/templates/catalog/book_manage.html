@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Управление Книгами</h1>
+  <ul>
+    {% for book in object_list %}
+      <li>
+        {{ book.title }}
+
+        <a href="{% url 'book-delete' book.id %}">Удалить</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

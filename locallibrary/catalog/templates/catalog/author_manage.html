@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Управление авторами</h1>
+  <ul>
+    {% for author in object_list %}
+      <li>
+        {{ author.first_name }} {{ author.last_name }}
+
+        <a href="{% url 'author-delete' author.id %}">Удалить</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -33,7 +33,7 @@
 </form>
      </li>
    {% else %}
-     <li> <form method="post" action="{% url 'login'%}?next={{request.path}}">
+     <li> <form method="post" action="{% url 'login'%}">
     {% csrf_token %}
              <button>Войти</button>
 </form>
@@ -43,6 +43,12 @@
                     {% csrf_token %}
                 <li class="staff">Сотрудникам:</li>
                 <li><a href="{% url 'all-borrowed' %}">Взятые книги</a></li>
+                <li class="edit">Редактирование книг:</li>
+                <li><a href="{% url 'book-manage' %}">Удалить книгу</a></li>
+                <li><a href="{% url 'book-create' %}">Добавить книгу</a></li>
+                <li class="edit">Редактирование авторов:</li>
+                <li><a href="{% url 'author-manage' %}">Удалить автора</a></li>
+                <li><a href="{% url 'author-create' %}">Добавить автора</a></li>
                 {% endif %}
   </ul>
           {% endblock %}
