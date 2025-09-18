@@ -3,6 +3,10 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import date
 import uuid
+import datetime
+from django.core.exceptions import ValidationError
+
+
 
 
 class Genre(models.Model):
@@ -67,11 +71,19 @@ class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
-    date_of_death = models.DateField('Died', null=True, blank=True)
+    date_of_death = models.DateField(null=True, blank=True)
+
+    def clean(self):
+        if self.date_of_birth and (datetime.date.today() - self.date_of_birth).days < 18 * 365:
+            raise ValidationError({'date_of_birth': ('Автор должен быть старже 18 лет.')})
+
+        if self.date_of_death and self.date_of_death >= datetime.date.today():
+            raise ValidationError({'date_of_death': ('Дата смерти не может быть позднее чем вчера.')})
 
     def get_absolute_url(self):
         return reverse('author-detail', args=[str(self.id)])
 
     def __str__(self):
         return f'{self.last_name}, {self.first_name}'
+
 

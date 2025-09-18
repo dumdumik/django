@@ -1,9 +1,9 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Удаление автора</h1>
+  <h1>Удаление книги</h1>
 
-  <p>Вы действительно хотите удалить автора?: {{ author }}?</p>
+  <p>Вы действительно хотите удалить книгу?: {{ book.title }}?</p>
 
   <form action="" method="POST">
     {% csrf_token %}

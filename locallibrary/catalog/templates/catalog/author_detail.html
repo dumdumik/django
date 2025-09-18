@@ -16,4 +16,8 @@
       <li>Автор не имеет книг</li>
     {% endfor %}
   </ul>
+  {% if request.user.is_staff %}
+                    {% csrf_token %}
+    <a class="author-deletes" href="{% url 'author-delete' author.id %}">Удалить автора</a>
+{% endif %}
 {% endblock %}

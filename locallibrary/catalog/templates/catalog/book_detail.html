@@ -4,14 +4,18 @@
   <h1>Название: {{ book.title }}</h1>
   <p>
   <strong>Автор:</strong>
+    {% if author %}
   <a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a>
+    {% else %}
+<p>Автор не указан</p>
+{% endif %}
 </p>
   <p><strong>Краткое содержание:</strong> {{ book.summary }}</p>
   <p><strong>Книжный номер:</strong> {{ book.isbn }}</p>
-  <p><strong>Язык:</strong> {{ book.language }}</p>
+<!--  <p><strong>Язык:</strong> {{ book.language }}</p>-->
   <p><strong>Жанр:</strong> {% for genre in book.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
-  <div style="margin-left:20px;margin-top:20px">
+  <div>
     <h4>Копии</h4>
 
     {% for copy in book.bookinstance_set.all %}
@@ -22,4 +26,8 @@
     <p class="text-muted"><strong>Идентификатор:</strong> {{copy.id}}</p>
     {% endfor %}
   </div>
+  {% if request.user.is_staff %}
+                    {% csrf_token %}
+    <a class="book-deletes" href="{% url 'book-delete' book.id %}">Удалить книгу</a>
+{% endif %}
 {% endblock %}

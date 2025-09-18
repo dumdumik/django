@@ -10,15 +10,6 @@ import datetime
 from .forms import RenewBookForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-class ManageAuthor(PermissionRequiredMixin, ListView):
-    model = Author
-    template_name = 'author_manage.html'
-    permission_required = 'catalog.delete_author'
-
-class ManageBook(PermissionRequiredMixin, ListView):
-    model = Book
-    template_name = 'book_manage.html'
-    permission_required = 'catalog.delete_book'
 
 class BookCreate(CreateView):
     model = Book
@@ -30,7 +21,7 @@ class BookUpdate(UpdateView):
 
 class BookDelete(DeleteView):
     model = Book
-    success_url = reverse_lazy('book_list')
+    success_url = reverse_lazy('books')
 
 class AuthorCreate(CreateView):
     model = Author

@@ -49,3 +49,26 @@ form > button:hover{
   font-size: 16px;
   font-weight: 600;
 }
+.book-deletes{
+  font-size: 18px;
+  color: darkred;
+}
+.book-deletes:hover{
+  color: darkgreen;
+}
+.author-deletes{
+  font-size: 18px;
+  color: darkred;
+}
+.author-deletes:hover{
+  color: darkgreen;
+}
+.author-forms{
+  margin: 20px 0 0 0;
+}
+.book-forms{
+  margin: 20px 0 0 0;
+}
+.login-form{
+  margin: 20px 0 0 0;
+}

@@ -27,13 +27,13 @@
                 <li class="user">Вы вошли как: <span>{{ user.get_username }}</span></li>
         <li><a href="{% url 'my-borrowed' %}">Мои взятые книги</a></li>
                 <li>
-         <form method="post" action="{% url 'logout'%}">
+         <form method="post" action="{% url 'logout' %}">
     {% csrf_token %}
              <button>Выйти</button>
 </form>
      </li>
    {% else %}
-     <li> <form method="post" action="{% url 'login'%}">
+     <li> <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
              <button>Войти</button>
 </form>
@@ -44,10 +44,8 @@
                 <li class="staff">Сотрудникам:</li>
                 <li><a href="{% url 'all-borrowed' %}">Взятые книги</a></li>
                 <li class="edit">Редактирование книг:</li>
-                <li><a href="{% url 'book-manage' %}">Удалить книгу</a></li>
                 <li><a href="{% url 'book-create' %}">Добавить книгу</a></li>
                 <li class="edit">Редактирование авторов:</li>
-                <li><a href="{% url 'author-manage' %}">Удалить автора</a></li>
                 <li><a href="{% url 'author-create' %}">Добавить автора</a></li>
                 {% endif %}
   </ul>
