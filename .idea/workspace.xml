@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4fda822-350a-4ad2-86f0-4ac88949d499" name="Changes" comment="" />
+    <list default="true" id="b4fda822-350a-4ad2-86f0-4ac88949d499" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/locallibrary/catalog/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/catalog/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/catalog/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/catalog/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/catalog/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/catalog/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/catalog/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/catalog/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/catalog/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/locallibrary/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/locallibrary/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/locallibrary/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/locallibrary/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/locallibrary/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/locallibrary/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1758183575110</updated>
-      <workItem from="1758183576572" duration="628000" />
+      <workItem from="1758183576572" duration="930000" />
     </task>
     <servers />
   </component>
